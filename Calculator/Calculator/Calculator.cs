@@ -15,7 +15,11 @@ namespace Calculator
 
        public decimal multiply(decimal a, decimal b)
        {
-          // bug for demo purposes
+          return a * b;
+       }
+
+       public double AddDouble(double a, double b)
+       {
           return a + b;
        }
     }
