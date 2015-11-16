@@ -22,5 +22,32 @@ namespace Calculator
       {
          return a + b;
       }
+
+      public double Divide(int value, int by)
+      {
+         if (value > 100)
+         {
+            throw new ArgumentOutOfRangeException("by");
+         }
+         return value / by;
+      }
+
+   }
+   
+   public class MemoryCalculator
+   {
+      public int CurrentValue { get; set; }
+
+      public int Add(int a)
+      {
+         CurrentValue = CurrentValue + a;
+         return CurrentValue;
+      }
+
+      public int Subtract(int a)
+      {
+         CurrentValue = CurrentValue - a;
+         return CurrentValue;
+      }
    }
 }

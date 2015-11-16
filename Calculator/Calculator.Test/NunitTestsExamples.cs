@@ -1,10 +1,18 @@
 ﻿using NUnit.Framework;
 using JoinString;
+using System;
 
 namespace Calculator.Test
 {
+   //TestFixture 1 : Simple NUnit test examples
+   //Equality and inequality
+   //Ranges
+   //Nulls and Booleans
+   //Collections
+   //Reference equality
+   //Exceptions
    [TestFixture]
-   public class SimpleCalculatorTests
+   public class NunitTestsExamples
    {
       [Test]
       public void ShouldAddTwoNumbers()
@@ -67,7 +75,68 @@ namespace Calculator.Test
       {
          var myObject = new SimpleCalculator();
          var result = myObject.AddDouble(50, -50);
-         Assert.That(result, Is.LessThanOrEqualTo(0)); 
+         Assert.That(result, Is.LessThanOrEqualTo(0));
       }
+
+      [Test]
+      public void ShouldErrorWhenDivideByZero()
+      {
+         var myObject = new SimpleCalculator();
+         Assert.That(() => myObject.Divide(200, 0), Throws.Exception);
+      }
+
+      [Test]
+      public void ShouldErrorWhenDivideByZero_ExpliciteExceptionType()
+      {
+         var myObject = new SimpleCalculator();
+         Assert.That(() => myObject.Divide(99, 0), Throws.TypeOf<DivideByZeroException>());
+      }
+
+      [Test]
+      public void ShouldErrorWhenDivideByZero_ExpectedFail()
+      {
+         var myObject = new SimpleCalculator();
+         Assert.That(() => myObject.Divide(200, 0), Throws.TypeOf<DivideByZeroException>());
+      }
+
+      [Test]
+      public void ShouldErrorWhenNumberTooBig()
+      {
+         var myObject = new SimpleCalculator();
+         Assert.That(() => myObject.Divide(200, 2), Throws.TypeOf<ArgumentOutOfRangeException>());
+      }
+
+      [Test]
+      public void ShouldErrorWhenNumberTooBig_MoreExplicit()
+      {
+         var myObject = new SimpleCalculator();
+         Assert.That(() => myObject.Divide(200, 2), Throws.TypeOf<ArgumentOutOfRangeException>()
+            .With.Matches<ArgumentOutOfRangeException>(x => x.ParamName == "by"));
+      }
+   }
+
+
+   //TestFixture 2 : Simple NUnit test examples
+   [TestFixture]
+   public class MemoryCalculatorTests
+   {
+      MemoryCalculator sut = new MemoryCalculator();
+
+      [Test]
+      public void ShouldAdd()
+      {
+         sut.Add(10);
+         sut.Add(5);
+         Assert.That(sut.CurrentValue, Is.EqualTo(15));
+      }
+
+      [Test]
+      public void ShouldSubtract()
+      {
+         sut.Subtract(5);
+         Assert.That(sut.CurrentValue, Is.EqualTo(-5));
+      }
+
+
    }
 }
