@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerCharacter", "PlayerCh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerCharacterTests", "PlayerCharacterTests\PlayerCharacterTests.csproj", "{395598BC-0488-43AB-A744-44050B3139EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitAttributesExamples", "NUnitAttributesExamples\NUnitAttributesExamples.csproj", "{CDFF345E-1B1C-460B-8D8B-323D40E8C784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{395598BC-0488-43AB-A744-44050B3139EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{395598BC-0488-43AB-A744-44050B3139EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{395598BC-0488-43AB-A744-44050B3139EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFF345E-1B1C-460B-8D8B-323D40E8C784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFF345E-1B1C-460B-8D8B-323D40E8C784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFF345E-1B1C-460B-8D8B-323D40E8C784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFF345E-1B1C-460B-8D8B-323D40E8C784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
